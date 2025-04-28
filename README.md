@@ -60,3 +60,34 @@ Add sound effects and other features as desired.
 Technologies
 TypeScript, Three.js, Cannon.js (for physics), and CSS.
 
+
+Architecture
+[HTML Document Loaded]
+         ↓
+[index.ts] → Calls onInit()
+         ↓
+[getElements()] → Gets references to Canvas, Buttons, Scoreboard
+         ↓
+[StackGame] instance created with Canvas
+         ↓
+[StackGame] 
+  - Sets up Three.js Scene
+  - Sets up Cannon.js Physics World
+  - Configures Camera, Lights, Base Blocks
+         ↓
+[User clicks Play Button]
+         ↓
+[StackGame.onGameStart()]
+  - Hides Menu
+  - Shows Score
+  - Starts Animation Loop
+         ↓
+[User Clicks Screen]
+         ↓
+[StackGame.onWindowClick()]
+  - Evaluates Block Overlap
+  - Adds new block or ends game
+         ↓
+[Continuous Animation + Physics Update]
+
+
