@@ -6,6 +6,18 @@
   height: 100%;
   outline: none;
 }
+.stack-game__header {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.stack-game__header .stack-game__button {
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
 
 .stack-game__container {
   display: flex;
@@ -33,7 +45,7 @@
   }
   100% {
     opacity: 5;
-    transform: translateY(0); /* end at normal position */
+    transform: translateY(1); /* end at normal position */
   }
 }
 

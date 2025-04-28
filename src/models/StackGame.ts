@@ -88,12 +88,11 @@ export class StackGame {
   }
 
   private addEventListeners(): void {
-    const { btnPlay } = getElements();
-
+    const { playButton } = getElements();
     window.addEventListener("resize", this.onWindowResize.bind(this));
     window.addEventListener("click", this.onWindowClick.bind(this));
 
-    btnPlay.addEventListener("click", this.onGameStart.bind(this));
+    playButton.addEventListener("click", this.onGameStart.bind(this));
   }
 
   private addBlock({ coords, sizes, direction }: AddBlockArgs): void {
@@ -295,7 +294,8 @@ export class StackGame {
     });
   }
 
-  private onGameStart(): void {
+  // private onGameStart(): void { 
+    public onGameStart(): void {
     const { score, menu } = getElements();
     const { gameStarted } = this.gameState;
 
@@ -350,7 +350,6 @@ export class StackGame {
 
     return block;
   }
-
   private updatePhysics(): void {
     const { fallBlocks } = this.gameState;
 
@@ -397,7 +396,4 @@ export class StackGame {
     this.render();
   }
 }
-
-
-
 
